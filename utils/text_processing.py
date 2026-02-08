@@ -1,4 +1,13 @@
 # utils/text_processing.py
+import nltk
+
+# Asegurar que las stopwords estén disponibles en Streamlit Cloud
+try:
+    nltk.data.find("corpora/stopwords")
+except LookupError:
+    nltk.download("stopwords")
+
+
 
 import re
 import pandas as pd
