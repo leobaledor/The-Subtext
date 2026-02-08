@@ -50,12 +50,6 @@ def run_full_pipeline(movie_name, omdb_key, tmdb_key):
     if df_movie is None:
         return None, None, None
 
-    # DEBUG: Verificar qué trae df_movie
-    print("\n=== DEBUG: df_movie ===")
-    print(df_movie)
-    print("TMDB ID extraído:", df_movie["tmdb_id"].iloc[0])
-    print("========================\n")
-
 
     # 3. Preprocesar columnas
     X = preprocess_movie_df(df_movie)
