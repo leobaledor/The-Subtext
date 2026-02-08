@@ -127,6 +127,7 @@ def build_movie_dataframe(
 
     # 15. Selección de columnas finales
     cols = [
+        "tmdb_id",
         "imdb_rating",
         "imdb_rating_prev",
         "runtime",
