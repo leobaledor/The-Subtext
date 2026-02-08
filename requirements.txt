@@ -5,3 +5,4 @@ requests
 emoji
 nltk
 joblib
+scikit-learn
