@@ -57,9 +57,11 @@ def run_full_pipeline(movie_name, omdb_key, tmdb_key):
     proba = model.predict_proba(X)[0][1]
 
     # 5. Obtener poster
-    tmdb_id = df_movie.get("tmdb_id", None)
     poster_url = None
-    if tmdb_id is not None:
-        poster_url = get_movie_poster_url(tmdb_id, tmdb_key)
+    if "tmdb_id" in df_movie.columns:
+        tmdb_id = df_movie["tmdb_id"].iloc[0]
+        if tmdb_id is not None:
+            poster_url = get_movie_poster_url(tmdb_id, tmdb_key)
+
 
     return proba, poster_url, df_movie
